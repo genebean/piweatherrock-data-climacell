@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+
+from argparse import ArgumentParser
+from piweatherrock_data_climacell import pwr_data
+
+
+def main():
+    parser = ArgumentParser(
+        description="""Get the forcast from ClimaCell""")
+    parser.add_argument(
+        '-a', '--apikey', required=True,
+        help='A ClimaCell API key')
+    parser.add_argument(
+        '--lat', required=True,
+        help='The latitude for which to get a forecast')
+    parser.add_argument(
+        '--lon', required=True,
+        help='The logitude for which to get a forecast')
+
+    args = parser.parse_args()
+    forecast = pwr_data.Forecast(
+        apikey=args.apikey,
+        latitude=args.lat,
+        longitude=args.lon,
+    )
+
+    forecast.get_forecast()
+    forecast.print_forecast_data()
+
+
+if __name__ == '__main__':
+    main()
