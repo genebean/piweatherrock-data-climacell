@@ -5,6 +5,16 @@
 
 This is the source code for the `piweatherrock-data-climacell` Python module. Its purpose is get the data needed for [PiWeatherRock](https://piweatherrock.technicalissues.us) from the [ClimaCell API](https://developer.climacell.co).
 
+## Importing
+
+To use this module you will want to add the following import statement:
+
+```python
+from piweatherrock_data_climacell import pwr_data
+```
+
+## CLI
+
 This module primarily exists as a component for PiWeatherRock but can also be used on its own. It includes a cli called `pwr-climacell-data` that will return the data usually passed to PiWeatherRock in JSON format. This can be useful to verify what data is being returned by the ClimaCell API.
 
 For example, to see the data associated with Atlanta, GA:
