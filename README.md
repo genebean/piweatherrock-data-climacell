@@ -10,7 +10,7 @@ This is the source code for the `piweatherrock-data-climacell` Python module. It
 To use this module you will want to add the following import statement:
 
 ```python
-from piweatherrock_data_climacell import pwr_data
+from piweatherrock.data_climacell import pwr_data
 ```
 
 ## CLI

@@ -1,7 +1,7 @@
 """Module setup."""
 
 import runpy
-from setuptools import setup, find_packages
+from setuptools import setup, find_namespace_packages
 
 PACKAGE_NAME = "piweatherrock-data-climacell"
 version_meta = runpy.run_path("./version.py")
@@ -21,8 +21,10 @@ def parse_requirements(filename):
 if __name__ == "__main__":
     setup(
         name=PACKAGE_NAME,
+        author="Gene Liverman",
+        author_email="gene@technicalissues.us",
         version=VERSION,
-        packages=find_packages(),
+        packages=find_namespace_packages(include=['piweatherrock.*']),
         install_requires=parse_requirements("requirements.txt"),
         python_requires=">=3.7",
         scripts=["scripts/pwr-climacell-data"],
@@ -30,7 +32,7 @@ if __name__ == "__main__":
         long_description=long_description,
         long_description_content_type="text/markdown",
         license='MIT',
-        url='https://github.com/genebean/python-piweatherrock-data-climacell',
+        url='https://github.com/genebean/piweatherrock-data-climacell',
         classifiers=[
             'License :: OSI Approved :: MIT License',
         ],
