@@ -5,6 +5,10 @@
 
 This is the source code for the `piweatherrock-data-climacell` Python module. Its purpose is get the data needed for [PiWeatherRock](https://piweatherrock.technicalissues.us) from the [ClimaCell API](https://developer.climacell.co).
 
+- [Importing](#importing)
+- [CLI](#cli)
+- [Release process](#release-process)
+
 ## Importing
 
 To use this module you will want to add the following import statement:
@@ -213,3 +217,12 @@ Running the command above will produce something similar to this:
   "observation_time": "2020-05-03T01:34:13.050Z"
 }
 ```
+
+## Release process
+
+- edit `version.py` according to the types of changes made
+- `python3 setup.py sdist bdist_wheel`
+- `twine check dist/*`
+- [optional] `twine upload --repository-url https://test.pypi.org/legacy/ dist/*`
+- `twine upload dist/*`
+- Create a git tag and push it
